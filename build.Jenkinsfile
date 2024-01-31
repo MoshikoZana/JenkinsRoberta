@@ -13,8 +13,8 @@ pipeline {
                     sh 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ECR_URL'
 
                     // Build and push Docker image
-                    sh "docker build -t $ECR_URL/robberta:0.0.${BUILD_NUMBER} ."
-                    sh "docker push $ECR_URL/robberta:0.0.${BUILD_NUMBER}"
+                    sh "docker build -t $ECR_URL/jenkins-moshiko:0.0.${BUILD_NUMBER} ."
+                    sh "docker push $ECR_URL/jenkins-moshiko:0.0.${BUILD_NUMBER}"
                 }
             }
         }
